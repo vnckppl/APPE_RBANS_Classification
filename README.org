@@ -1,4 +1,4 @@
-#+TITLE: MCI/Alzeimer's Disease Classification Model based on RBANS Scores
+#+TITLE: MCI/Alzheimer's Disease Classification Model based on RBANS Scores
 
 * Background
 This repository contains a classification model for /mild cognitive impairment/ and /Alzheimer's disease/ based on performance on the Repeatable Battery for the Assessment of Neuropsychological Status ([[https://pubmed.ncbi.nlm.nih.gov/9845158/][RBANS]]). The classification model takes in a total of six index scores and sub scores and returns a label (/cognitively unimpaired/, /mild cognitive impairment/, or /Alzheimer's disease/) as well as probabilities for each of these classes.
@@ -26,7 +26,7 @@ This will ask you to enter the 6 RBANS scores that are being used for classifica
 - Immediate Memory INDEX Sore
 - List Learning Total Score
 - Language INDEX Score
-- Semantic Fluencey Total
+- Semantic Fluency Total
 - Delayed Memory INDEX Score
 - Story Recall Total Score
 
@@ -39,7 +39,7 @@ ENTER YOUR RBANS SCORES:
 Immediate Memory INDEX Score:   97
 List Learning Total Score:      23
 Language INDEX Score:           92
-Semantic Fluencey Total Score:  16
+Semantic Fluency Total Score:   16
 Delayed Memory INDEX Score:     84
 Story Recall Total Score:       5
 -----------------------------------
