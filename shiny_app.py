@@ -19,28 +19,34 @@ app_ui = ui.page_fluid(
     # ** Read input data from user
     ui.TagList(
         ui.row(
-            ui.column(4, ui.h4("Immediate Memory INDEX Score", style="font-size: 18px;")),
-            ui.column(4, ui.input_numeric("imi_score", "", "", min=1, max=160))
+            ui.column(4, ui.h4("Immediate Memory INDEX Score", style="font-size: 16px;")),
+            ui.column(4, ui.input_numeric("imi_score", "", "", min=1, max=160), style="width: 100px;"),
+            style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("List Learning Total Score", style="font-size: 18px;")),
-            ui.column(4, ui.input_numeric("imi_llts", "", "", min=1, max=40))
+            ui.column(4, ui.h4("List Learning Total Raw Score", style="font-size: 16px;")),
+            ui.column(4, ui.input_numeric("imi_llts", "", "", min=1, max=40), style="width: 100px;"),
+            style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Language INDEX Score", style="font-size: 18px;")),
-            ui.column(4, ui.input_numeric("lis_score", "", "", min=1, max=160))
+            ui.column(4, ui.h4("Language INDEX Score", style="font-size: 16px;")),
+            ui.column(4, ui.input_numeric("lis_score", "", "", min=1, max=160), style="width: 100px;"),
+            style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Semantic Fluency Total Score", style="font-size: 18px;")),
-            ui.column(4, ui.input_numeric("lis_sf", "", "", min=1, max=160))
+            ui.column(4, ui.h4("Semantic Fluency Total Raw Score", style="font-size: 16px;")),
+            ui.column(4, ui.input_numeric("lis_sf", "", "", min=1, max=160), style="width: 100px;"),
+            style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Delayed Memory INDEX Score", style="font-size: 18px;")),
-            ui.column(4, ui.input_numeric("dmi_score", "", "", min=1, max=160))
+            ui.column(4, ui.h4("Delayed Memory INDEX Score", style="font-size: 16px;")),
+            ui.column(4, ui.input_numeric("dmi_score", "", "", min=1, max=160), style="width: 100px;"),
+            style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Story Recall Total Score", style="font-size: 18px;")),
-            ui.column(4, ui.input_numeric("dmi_srts", "", "", min=1, max=12))
+            ui.column(4, ui.h4("Story Recall Total Raw Score", style="font-size: 16px;")),
+            ui.column(4, ui.input_numeric("dmi_srts", "", "", min=1, max=12), style="width: 100px;"),
+            style="margin-right: 105px;"
         )
     ),
 
@@ -51,7 +57,9 @@ app_ui = ui.page_fluid(
     ui.tags.hr(),
     ui.HTML("<b>Class Specific Probabilities</b>"),
     ui.output_ui("probabilistic_classification"), # _ui instead of _text for html rendering
-    output_widget("bar_plot")
+    output_widget("bar_plot"),
+    ui.tags.hr(),
+    ui.output_ui("reference")
 )
 
 # * Define the server logic
@@ -153,7 +161,7 @@ def server(input, output, session):
                 xaxis_title='',
                 yaxis=dict(showticklabels=False),  # Hide y-ticks
                 barmode='stack',                   # Stack the bars
-                width=800,                         # Set width of the figure
+                width=320,                         # Set width of the figure
                 height=160,                        # Set height of the figure
                 legend=dict(
                     orientation="h",  # Horizontal layout
@@ -162,7 +170,7 @@ def server(input, output, session):
                     xanchor="center",  # Center the legend on the X axis
                     x=0.5  # Center the legend based on the entire figure width
                 ),
-                margin=dict(l=50, r=50, t=30, b=30),
+                margin=dict(l=0, r=0, t=30, b=0),
                 xaxis=dict(range=[-0.01, 1.01]),
             )
             return fig
@@ -185,6 +193,16 @@ def server(input, output, session):
                 margin=dict(l=0, r=0, t=0, b=0)  # Remove margins
             )
             return empty_fig
+
+    # ** Predict the probablistic class labels
+    @output()
+    @render.text
+    def reference():
+        html_text = f"""<b>Background</b><br><a href="https://github.com/vnckppl/APPE_RBANS_Classification">THIS</a> github repository contains the classification model for mild cognitive impairment and Alzheimer’s disease based on performance on the <i>Repeatable Battery for the Assessment of Neuropsychological Status</i> (RBANS) presented here.<br><br>
+
+        Information on the data used to train this model, how the model was trained, and how to interpret the outcomes, as well as a discussion of the model performance in terms of classification accuracy following cross-validation is discussed in the manuscript: <i>Classification of Mild Cognitive Impairment and Alzheimer’s Disease Using the Repeatable Battery for the Assessment of Neuropsychological Status</i> by <u>Vincent Koppelmans</u>, <u>Tolga Tasdizen</u>, and <u>Kevin Duff</u> (currently submitted for publication; upon publication a link to the article will be included here)."""
+
+        return html_text
 
 
 # Create the app
