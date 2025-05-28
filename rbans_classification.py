@@ -6,25 +6,23 @@ import pandas as pd
 # * Read RBANS data from user input
 print("ENTER YOUR RBANS SCORES:")
 print("-----------------------------------")
-imi_score = input('Immediate Memory INDEX Score:\t')
-imi_llts  = input('List Learning Total Score:\t')
-lis_score = input('Language INDEX Score:\t\t')
-lis_sf    = input('Semantic Fluency Total Score:\t')
-dmi_score = input('Delayed Memory INDEX Score:\t')
-dmi_srts  = input('Story Recall Total Score:\t')
+imi_llts = input('Immediate Memory: List Learning Total Score:\t')
+imi_smts = input('Immediate Memory: Story Memory Total Score:\t')
+lis_sf   = input('Language: Semantic Fluency Total Score:\t\t')
+dmi_lrts = input('Delayed Memory: List Recall Total Score:\t')
+rt_score = input('Delayed Memory: List Recognition Total Score:\t')
+dmi_srts = input('Delayed Memory: Story Recall Total Score:\t')
 print("-----------------------------------")
-
 
 # * Import the trained model
 import dill
 with open('rbans_model.dill.pkl', 'rb') as file:
     predict, predict_proba = dill.load(file)
 
-
 # * Put the RBANS scores in the correct positional order
-rbans_scores = [imi_score, imi_llts] + [0] * 4 + \
-    [lis_score, 0, lis_sf, 0, 0, 0, dmi_score,
-     0, 0, dmi_srts] + [0] * 7
+rbans_scores = [0, imi_llts, imi_smts] + [0] * 5 + \
+    [lis_sf] + [0] * 4 + [dmi_lrts, rt_score, dmi_srts] \
+    + [0] * 7
 
 
 # * Add column labels
