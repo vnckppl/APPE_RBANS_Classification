@@ -23,32 +23,32 @@ python3 rbans_classification.py
 #+end_src
 
 This will ask you to enter the 6 RBANS scores that are being used for classification:
-- Immediate Memory INDEX Sore
-- List Learning Total Score
-- Language INDEX Score
-- Semantic Fluency Total
-- Delayed Memory INDEX Score
-- Story Recall Total Score
+- Immediate Memory: List Learning raw score
+- Immediate Memory: Story Memory raw score
+- Language: Semantic Fluency raw score
+- Delayed Memory: List Recall raw score
+- Delayed Memory: List Recognition raw score
+- Delayed Memory: Story Recall raw score
 
 * Example output
-When entering the following values: =97, 23, 92, 16, 84, 5=, the script output will show:
+When entering the following values: =25, 19, 23, 2, 18, 6=, the script output will show:
 
 #+begin_example
 ENTER YOUR RBANS SCORES:
------------------------------------
-Immediate Memory INDEX Score:   97
-List Learning Total Score:      23
-Language INDEX Score:           92
-Semantic Fluency Total Score:   16
-Delayed Memory INDEX Score:     84
-Story Recall Total Score:       5
------------------------------------
+-----------------------------------------------
+Immediate Memory: List Learning raw score: 25
+Immediate Memory: Story Memory raw score: 19
+Language: Semantic Fluency raw score: 23
+Delayed Memory: List Recall raw score: 2
+Delayed Memory: List Recognition raw score: 18
+Delayed Memory: Story Recall raw score: 6
+----------------------------------------------
 
 PREDICTED CLASS:
 Mild Cognitive Impairment
 
 GROUP SPECIFIC CLASSIFICATION PROBABILITY:
-Cognitively Unimpaired:    0.262
-Mild Cognitive Impairment: 0.508
-Alzheimer's Disease:       0.23
+Cognitively Unimpaired:    0.123
+Mild Cognitive Impairment: 0.817
+Alzheimer's Disease:       0.06
 #+end_example
