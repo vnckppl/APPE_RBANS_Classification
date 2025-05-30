@@ -2,7 +2,7 @@ dill==0.3.9
 scikit-learn==1.6.1
 imblearn==0.0
 pandas==2.2.3
-shiny
-shinywidgets
-plotly
-rsconnect-python
+shiny==1.4.0
+shinywidgets==0.6.2
+plotly==6.1.2
+rsconnect-python==1.26.0
