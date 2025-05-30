@@ -20,37 +20,37 @@ app_ui = ui.page_fluid(
     # ** Read input data from user
     ui.TagList(
         ui.row(
-            ui.column(4, ui.h4("Immediate Memory: List Learning Score", style="font-size: 16px;")),
+            ui.column(4, ui.h4("Immediate Memory: List Learning raw score", style="font-size: 16px;")),
             ui.column(4, ui.input_numeric("imi_llts", "", "", min=1, max=40), style="width: 100px;"),
             ui.column(6, ui.output_text_verbatim("validation_imi_llts")),
             style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Immediate Memory: Story Memory Score", style="font-size: 16px;")),
+            ui.column(4, ui.h4("Immediate Memory: Story Memory raw score", style="font-size: 16px;")),
             ui.column(4, ui.input_numeric("imi_smts", "", "", min=1, max=24), style="width: 100px;"),
             ui.column(6, ui.output_text_verbatim("validation_imi_smts")),
             style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Language: Semantic Fluency Score", style="font-size: 16px;")),
+            ui.column(4, ui.h4("Language: Semantic Fluency raw score", style="font-size: 16px;")),
             ui.column(4, ui.input_numeric("lis_sf", "", "", min=1, max=40), style="width: 100px;"),
             ui.column(6, ui.output_text_verbatim("validation_lis_sf")),
             style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Delayed Memory: List Recall Score", style="font-size: 16px;")),
+            ui.column(4, ui.h4("Delayed Memory: List Recall raw score", style="font-size: 16px;")),
             ui.column(4, ui.input_numeric("dmi_lrts", "", "", min=1, max=10), style="width: 100px;"),
             ui.column(6, ui.output_text_verbatim("validation_dmi_lrts")),
             style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Delayed Memory: List Recognition Score", style="font-size: 16px;")),
+            ui.column(4, ui.h4("Delayed Memory: List Recognition raw score", style="font-size: 16px;")),
             ui.column(4, ui.input_numeric("rt_score", "", "", min=1, max=20), style="width: 100px;"),
             ui.column(6, ui.output_text_verbatim("validation_rt_score")),
             style="margin-right: 105px;"
         ),
         ui.row(
-            ui.column(4, ui.h4("Delayed Memory: Story Recall Score", style="font-size: 16px;")),
+            ui.column(4, ui.h4("Delayed Memory: Story Recall raw score", style="font-size: 16px;")),
             ui.column(4, ui.input_numeric("dmi_srts", "", "", min=1, max=12), style="width: 100px;"),
             ui.column(6, ui.output_text_verbatim("validation_dmi_srts")),
             style="margin-right: 105px;"
