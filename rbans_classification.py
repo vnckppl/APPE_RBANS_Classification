@@ -5,14 +5,14 @@ import pandas as pd
 
 # * Read RBANS data from user input
 print("ENTER YOUR RBANS SCORES:")
-print("-----------------------------------")
-imi_llts = input('Immediate Memory: List Learning Total Score:\t')
-imi_smts = input('Immediate Memory: Story Memory Total Score:\t')
-lis_sf   = input('Language: Semantic Fluency Total Score:\t\t')
-dmi_lrts = input('Delayed Memory: List Recall Total Score:\t')
-rt_score = input('Delayed Memory: List Recognition Total Score:\t')
-dmi_srts = input('Delayed Memory: Story Recall Total Score:\t')
-print("-----------------------------------")
+print("-----------------------------------------------")
+imi_llts = input('Immediate Memory: List Learning raw score:\t')
+imi_smts = input('Immediate Memory: Story Memory raw score:\t')
+lis_sf   = input('Language: Semantic Fluency raw score:\t\t')
+dmi_lrts = input('Delayed Memory: List Recall raw score:\t')
+rt_score = input('Delayed Memory: List Recognition raw score:\t')
+dmi_srts = input('Delayed Memory: Story Recall raw score:\t')
+print("-----------------------------------------------")
 
 # * Import the trained model
 import dill
