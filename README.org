@@ -17,6 +17,11 @@ cd APPE_RBANS_Classification
 python3 -m pip install requirements.txt
 #+end_src
 
+Unzip the ~.dill.pkl~ file (which was compressed to be able to fit on Github):
+#+begin_src bash
+gunzip rbans_model.dill.pkl.gz
+#+end_src
+
 Then, run the script:
 #+begin_src bash
 python3 rbans_classification.py
